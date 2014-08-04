@@ -17,7 +17,7 @@ module ActiveRestClient
     end
 
     def self.debug(message)
-      if defined?(Rails) && Rails.respond_to?(:logger)
+      if defined?(Rails) && Rails.respond_to?(:logger) && Rails.logger
         Rails.logger.debug(message)
       elsif @logfile
         File.open(@logfile, "a") do |f|
